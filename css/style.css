@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+:root {
+    --base-color: #FAFAFA;
+    --text-color: #373737; 
+    --main-color: #007E66;
+}
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosans.css);
+
+*{
+    background-color: var(--base-color);
+    color: var(--text-color);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+    max-width: 500pt;
+    margin-right: auto;
+    margin-left : auto;
+    padding-right: 1em;
+    padding-left:1em;
+}
+
+h1{
+    color: var(--main-color);
+}
+
+h2{
+    color: var(--main-color);
+    border-bottom: solid;
+}
+
+footer {
+    text-align: center;
+    height: 2em;
+}
