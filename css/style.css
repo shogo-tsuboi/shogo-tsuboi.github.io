@@ -4,6 +4,8 @@
     --base-color: #FAFAFA;
     --text-color: #373737; 
     --main-color: #007E66;
+    --sub-color: #E7EAE7;
+    --footer-height: 5em;
 }
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosans.css);
@@ -11,15 +13,26 @@
 *{
     background-color: var(--base-color);
     color: var(--text-color);
-    font-family: 'Noto Sans', sans-serif;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+html{
+  min-height: 100%;
+  position: relative;
+}
+
+dt{
+    font-weight: bold;
 }
 
 body{
-    max-width: 800pt;
+    max-width: 620pt;
     margin-right: auto;
     margin-left : auto;
     padding-right: 1em;
-    padding-left:1em;
+    padding-left: 1em;
+    margin-bottom: calc(var(--footer-height) + 1em);
 }
 
 li{
@@ -36,9 +49,25 @@ h1{
 
 h2{
     color: var(--text-color);
+    border-bottom: solid 1pt;
 }
 
 footer {
+	margin-top: 1em;
+	display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footer-height);
+    color: var(--text-color);
+    background: var(--sub-color);
+}
+
+.footer-container{
+    margin: auto;
     text-align: center;
-    height: 2em;
+    color: var(--text-color);
+    background: var(--sub-color);
 }
