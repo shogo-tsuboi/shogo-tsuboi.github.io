@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+    <title>【自著紹介】根拠づけの論理の論文を書きました</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<h1>【自著紹介】根拠づけの論理の論文を書きました</h1>
+
+<p>
+    私の書いた "Simple Sequent Calculus for Weak Full Grounding" という論文が先日、<i><a href="https://link.springer.com/journal/10849">Journal of Logic, Language, and Information</a></i> に受理されました。著者最終稿は <a href="https://philpapers.org/rec/TSUASS">PhilArchive</a> にアップロードしてあります。以下では、この論文の概要を解説します。
+</p>
+
+<h2>背景</h2>
+
+<p>
+    この論文は、根拠づけ (grounding) の論理にかかわるものです。AがBを根拠づけるというのは、Bがなぜ成り立つのかの理由をAが与えるということです。例えば、p&qという連言は、その連言肢であるpとqに根拠づけられると言えます。というのも、p&qがなぜ成り立つ理由は、pとqが両方とも成り立つことに求められるからです。
+</p>
+
+<p>
+    根拠づけの論理の分野においては、<a href="https://doi.org/10.1017/CBO9781139149136.002">Fine 2012</a> 等で打ち出された二つの区別に依拠して議論するのが標準となっています。それは、完全な (full) 根拠づけ／部分的な (partial) 根拠づけの区別と、厳密な (strict) 根拠づけ／弱い (weak) 根拠づけの区別です。
+    <ul>
+        <li>完全な根拠づけというのは、根拠づけられる命題が成り立つことにとって、根拠となる命題が成り立つので「十分」だというような関係のことです。先の「pとqがp&qを根拠づける」は完全な根拠づけです。部分的な根拠づけは、「十分」ではないような関係のことです。例えば、pはp&qの部分的な根拠ですが、完全な根拠ではありません。</li>
+        <li>厳密な根拠づけというのは、非反射的であるような根拠づけのことです。普通、どんな命題もそれ自身の理由となることはないと考えられますが、それと同じように、どんな命題も、それ自身の厳密な根拠ではない、と考えるわけです。これに対して弱い根拠づけというのは、そうした反射性を認めるような根拠づけのことです。</li>
+    </ul>
+    今回書いた論文は、専ら<b>弱く完全な</b>根拠づけの論理に焦点を絞ったものです。
+</p>
+
+<p>
+    弱く完全な根拠づけの論理体系としては色々なものがすでにありますが、今回の論文では、<a href="https://doi.org/10.1007/s10992-019-09511-1">Lovett 2020</a> で提示された論理体系 <b>LWG</b> というものに着目しています。
+</p>
+
+<h2>メインの結果</h2>
+
+<p>
+    <b>LWG</b> が、次のような sequent スタイルの証明体系 <b>G<sub>LWG</sub></b> と同等であることを示しました。
+$$
+\begin{array}{|rlrl|}
+\hline
+\mathbf{Initial\ Sequents} & & \\
+(\text{Initial}^+) & \Gamma, p \Rightarrow p, \Delta \quad \text{where } \sigma(\Gamma, p) \subseteq \sigma(p, \Delta) & \\
+(\text{Initial}^-) & \Gamma, \lnot p \Rightarrow \lnot p, \Delta \quad \text{where } \sigma(\Gamma, \lnot p) \subseteq \sigma(\lnot p, \Delta) & \\[1.5ex]
+
+\mathbf{Logical\ Rules} & & \\
+(\land \text{L}) & \dfrac{\Gamma, A, B \Rightarrow \Delta}{\Gamma, A \land B \Rightarrow \Delta} & 
+(\land \text{R}) & \dfrac{\Gamma \Rightarrow A, \Delta \quad \Gamma \Rightarrow B, \Delta}{\Gamma \Rightarrow A \land B, \Delta} \\[4ex]
+
+(\lor \text{L}) & \dfrac{\Gamma, A \Rightarrow \Delta \quad \Gamma, B \Rightarrow \Delta}{\Gamma, A \lor B \Rightarrow \Delta} & 
+(\lor \text{R}) & \dfrac{\Gamma \Rightarrow A, B, \Delta}{\Gamma \Rightarrow A \lor B, \Delta} \\[4ex]
+
+(\lnot\land \text{L}) & \dfrac{\Gamma, \lnot A, \lnot B \Rightarrow \Delta}{\Gamma, \lnot(A \land B) \Rightarrow \Delta} & 
+(\lnot\land \text{R}) & \dfrac{\Gamma \Rightarrow \lnot A, \lnot B, \Delta}{\Gamma \Rightarrow \lnot(A \land B), \Delta} \\[4ex]
+
+(\lnot\lor \text{L}) & \dfrac{\Gamma, \lnot A, \lnot B \Rightarrow \Delta}{\Gamma, \lnot(A \lor B) \Rightarrow \Delta} & 
+(\lnot\lor \text{R}) & \dfrac{\Gamma \Rightarrow \lnot A, \Delta \quad \Gamma \Rightarrow \lnot B, \Delta}{\Gamma \Rightarrow \lnot(A \lor B), \Delta} \\[4ex]
+
+(\lnot\lnot \text{L}) & \dfrac{\Gamma, A \Rightarrow \Delta}{\Gamma, \lnot\lnot A \Rightarrow \Delta} & 
+(\lnot\lnot \text{R}) & \dfrac{\Gamma \Rightarrow A, \Delta}{\Gamma \Rightarrow \lnot\lnot A, \Delta} \\[2ex]
+
+\mathbf{Structural\ Rules} & & \\
+(\text{Contraction L}) & \dfrac{\Gamma, A, A \Rightarrow \Delta}{\Gamma, A \Rightarrow \Delta} & 
+(\text{Contraction R}) & \dfrac{\Gamma \Rightarrow A, A, \Delta}{\Gamma \Rightarrow A, \Delta} \\[3ex]
+\hline
+\end{array}
+$$
+    ただし、Initial Sequent のところに出てくる \(\sigma\) という関数は大体次のように定義されます。（より正確な定義は論文の第 3.1 節を参照してください。）
+$$
+\sigma(A) := \{ p \mid p は A にポジティブに現れる \} \cup \{ \lnot p \mid p は A にネガティブに現れる \}.
+$$
+</p>
+
+<p>
+    <b>G<sub>LWG</sub></b> は次の基本的な特徴を持ちます。
+    <ul>
+        <li><b>G<sub>LWG</sub></b> において sequent \(\Gamma \Rightarrow \Delta\) が導出可能なら、\(\sigma(\Gamma) \subseteq \sigma(\Delta)\) が成り立つ。(Lemma 3.1)</li>
+        <li>Identity と Cutは許容可能。(Lemma 3.2 and 4.6)</li>
+        <li>Weakening は条件付きで許容可能。(Lemma 3.3)</li>
+    </ul>
+</p>
+
+<p>
+    さらに、<b>G<sub>LWG</sub></b> は他の sequent 計算の体系と次のような関係にあります。
+    <ul>
+        <li>
+        関連性論理の一種 First-Degree Entailment のための sequent 計算の体系として <a href="https://doi.org/10.1002/malq.19950410403">Pynko (1995)</a> で提示された体系は、本質的には、<b>G<sub>LWG</sub></b> の Initial Sequent における "where..." の条件を落とすことで得られます。（第 3.2 節）
+        </li>
+        <li>
+        同じく関連性論理の一種 Analytic Containment の sequent 計算の体系として <a href="http://dx.doi.org/10.1007/s11225-017-9719-y">French (2017)</a> で提示された体系は、<b>G<sub>LWG</sub></b> の Initial Sequent における "where..." の条件の \(\subseteq\) を \(\supseteq\) に置き換えることで得られます。（第 3.2 節）
+        <ul>
+            <li>というか、論文を書くに至った経緯としては逆で、「French (2017) の体系をそのように修正すれば根拠づけのための体系になるのではないか」と思いついたというのが実際のところです。</li>
+        </ul>
+        </li>
+        <li><b>G<sub>LWG</sub></b> と French (2017) の体系は、「否定双対 (negation dual)」という関係に立ちます。(Lemma 4.4)</li>
+    </ul>
+</p>
+
+</body>
+
+<footer>
+<div class="footer-container">
+<a href="../">戻る</a>
+</div>
+</footer>
+
+</html>

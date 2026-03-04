@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+:root {
+    --base-color: #FAFAFA;
+    --text-color: #373737; 
+    --main-color: #007E66;
+    --sub-color: #E7EAE7;
+}
+
+*{
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+body{
+    margin: 1em 2em;
+}
+
+h1,h2,h3{
+    color: var(--main-color);
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 5vw;
+        margin: 0.5em;
+    }
+}
