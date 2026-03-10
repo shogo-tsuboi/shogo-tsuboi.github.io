@@ -20,6 +20,9 @@ h1,h2{
     color: var(--main-color);
 }
 
+#profile{
+    width: 300px;
+}
 
 @media (max-width: 768px) {
     body {
