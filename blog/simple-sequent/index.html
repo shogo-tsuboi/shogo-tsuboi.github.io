@@ -45,7 +45,7 @@
 <h2>メインの結果</h2>
 
 <p>
-    <b>LWG</b> が、次のような sequent スタイルの証明体系 <b>G<sub>LWG</sub></b> と同等であることを示しました。(Theorem 5.6)
+    <b>LWG</b> が、次のような sequent スタイルの証明体系 \(\mathcal{G}_\mathbf{LWG}\) と同等であることを示しました。(Theorem 5.6)
 $$
 \begin{array}{|rlrl|}
 \hline
@@ -82,27 +82,27 @@ $$
 </p>
 
 <p>
-    <b>G<sub>LWG</sub></b> は次の基本的な特徴を持ちます。
+    \(\mathcal{G}_\mathbf{LWG}\) は次の基本的な特徴を持ちます。
     <ul>
-        <li><b>G<sub>LWG</sub></b> において sequent \(\Gamma \Rightarrow \Delta\) が導出可能なら、\(\sigma(\Gamma) \subseteq \sigma(\Delta)\) が成り立つ。(Lemma 3.1)</li>
+        <li>\(\mathcal{G}_\mathbf{LWG}\) において sequent \(\Gamma \Rightarrow \Delta\) が導出可能なら、\(\sigma(\Gamma) \subseteq \sigma(\Delta)\) が成り立つ。(Lemma 3.1)</li>
         <li>Identity と Cutは許容可能。(Lemma 3.2 and 4.6)</li>
         <li>Weakening は条件付きで許容可能。(Lemma 3.3)</li>
     </ul>
 </p>
 
 <p>
-    さらに、<b>G<sub>LWG</sub></b> は他の sequent 計算の体系と次のような関係にあります。
+    さらに、\(\mathcal{G}_\mathbf{LWG}\) は他の sequent 計算の体系と次のような関係にあります。
     <ul>
         <li>
-        関連性論理の一種 First-Degree Entailment のための sequent 計算の体系として <a href="https://doi.org/10.1002/malq.19950410403">Pynko 1995</a> で提示された体系は、本質的には、<b>G<sub>LWG</sub></b> の Initial Sequent における "where..." の条件を落とすことで得られます。（第 3.2 節）
+        関連性論理の一種 First-Degree Entailment のための sequent 計算の体系として <a href="https://doi.org/10.1002/malq.19950410403">Pynko 1995</a> で提示された体系は、本質的には、\(\mathcal{G}_\mathbf{LWG}\) の Initial Sequent における "where..." の条件を落とすことで得られます。（第 3.2 節）
         </li>
         <li>
-        同じく関連性論理の一種 Analytic Containment の sequent 計算の体系として <a href="http://dx.doi.org/10.1007/s11225-017-9719-y">French 2017</a> で提示された体系は、<b>G<sub>LWG</sub></b> の Initial Sequent における "where..." の条件の \(\subseteq\) を \(\supseteq\) に置き換えることで得られます。（第 3.2 節）
+        同じく関連性論理の一種 Analytic Containment の sequent 計算の体系として <a href="http://dx.doi.org/10.1007/s11225-017-9719-y">French 2017</a> で提示された体系は、\(\mathcal{G}_\mathbf{LWG}\) の Initial Sequent における "where..." の条件の \(\subseteq\) を \(\supseteq\) に置き換えることで得られます。（第 3.2 節）
         <ul>
             <li>というか、論文を書くに至った経緯としては逆で、「French 2017 の体系をそのように修正すれば根拠づけのための体系になるのではないか」と思いついたというのが実際のところです。</li>
         </ul>
         </li>
-        <li><b>G<sub>LWG</sub></b> と French 2017 の体系は、「否定双対 (negation dual)」という関係に立ちます。(Lemma 4.4)</li>
+        <li>\(\mathcal{G}_\mathbf{LWG}\) と French 2017 の体系は、「否定双対 (negation dual)」という関係に立ちます。(Lemma 4.4)</li>
     </ul>
 </p>
 
