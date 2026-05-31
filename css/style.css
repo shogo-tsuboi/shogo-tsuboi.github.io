@@ -9,7 +9,6 @@
 
 *{
     font-family: sans-serif;
-    color: var(--text-color);
     box-sizing: border-box;
 }
 
@@ -18,9 +17,20 @@ body{
     padding: 0 2em;
     font-size: 16pt;
     background-color: var(--base-color);
+    color: var(--text-color);
     max-width: 50em;
     
     overflow-x: hidden;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+a:hover{
+    color: var(--sub-color);
 }
 
 h1,h2{
@@ -42,6 +52,34 @@ footer{
     margin-right: calc(50% - 50vw);
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+header h1{
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
 #profile-container{
     display: flex;
     flex-direction: row;
@@ -50,7 +88,7 @@ footer{
     padding: 2em;
 }
 
-#profile{
+#profile-picture{
     width: 15em;
     border-radius: 50%;
     object-fit: cover;
@@ -69,13 +107,23 @@ footer{
         padding: 0 0.5em;
     }
     
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        align-items: flex-start;
+        width: 100%;
+    }
+    
     #profile-container{
         flex-direction: column;
         align-items: center;
         padding: 1em;
     }
     
-    #profile{
+    #profile-picture{
         width: 50%;
     }
     
