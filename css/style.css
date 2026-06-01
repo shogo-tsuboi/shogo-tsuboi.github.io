@@ -98,6 +98,18 @@ nav ul{
     width: auto;
 }
 
+.formula-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1em 0;
+}
+
+.formula-container mjx-container {
+    display: inline-block;
+    min-width: 100%;
+    max-width: none !important;
+}
+
 
 
 @media (max-width: 768px) {
