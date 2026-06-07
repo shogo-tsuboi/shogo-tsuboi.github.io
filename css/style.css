@@ -8,7 +8,7 @@
 }
 
 *{
-    font-family: sans-serif;
+    font-family: "Martel Sans", sans-serif;
     box-sizing: border-box;
 }
 
@@ -19,7 +19,6 @@ body{
     background-color: var(--base-color);
     color: var(--text-color);
     max-width: 50em;
-    
     overflow-x: hidden;
 }
 
