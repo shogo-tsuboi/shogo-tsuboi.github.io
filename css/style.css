@@ -143,10 +143,34 @@ nav ul{
     }
     
     #profile-picture{
+        max-width: 15em;
         width: 50%;
     }
     
     #profile-text{
         width: 100%;
     }
+}
+
+
+@media print {
+  @page {
+    margin: 20mm; 
+  }
+
+  body {
+    font-size: 11pt; 
+  }
+  
+  h1 {
+    font-size: 14pt;
+  }
+  
+  h2 {
+    font-size: 12pt;
+  }
+  
+  h3,h4,h5 {
+    font-size: 11pt;
+  }
 }
