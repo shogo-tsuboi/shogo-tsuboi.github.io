@@ -15,7 +15,7 @@
 body{
     margin: 2em auto;
     padding: 0 2em;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 1.8;
     background-color: var(--base-color);
     color: var(--text-color);
@@ -24,7 +24,7 @@ body{
 }
 
 a {
-    color: var(--text-color);
+    color: var(--main-color);
     text-decoration: underline;
     text-decoration-style: dotted;
 }
@@ -39,10 +39,6 @@ ul li{
 
 ul li:last-child{
     margin-bottom: 0;
-}
-
-h1,h2{
-    color: var(--main-color);
 }
 
 h2{
